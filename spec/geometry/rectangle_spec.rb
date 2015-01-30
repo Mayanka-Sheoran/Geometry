@@ -1,23 +1,21 @@
 require 'spec_helper'
 describe Rectangle do 
- let(:rec1) {Rectangle.new(2,3)}
- let(:rec2) {Rectangle.new(3,3)}
- let(:rec3) {Rectangle.new(2,4)}
+ let(:rectangle1) {Rectangle.new(2, 3)}
+ let(:rectangle2) {Rectangle.new(3, 3)}
+ let(:square1) {Rectangle.buildsquare(2)}
 
  it "Calculates the perimeter"  do
- expect(rec1.perimeter).to eq(10)
+  expect(rectangle1.perimeter).to eq(10)
  end
 
- it "Checks for nil" do
- expect(rec1).not_to eq(nil)
- end
-    
- it "Checks for type rectangle" do
- expect(rec1.check).to eq true
- end
- 
- it " Calculates the area " do
- expect(rec1.area). to eq(6)
+ it "Calculates the area of rectangle" do
+  expect(rectangle1.area).to eq(6)
  end
 
+ describe "Square" do
+
+ it "Calculates the area of square" do
+  expect(square1.area).to eq(4)
+ end
+end
 end
